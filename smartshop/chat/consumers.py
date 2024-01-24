@@ -47,7 +47,7 @@ class ChatRoomConsumer(ObserverModelInstanceMixin, GenericAsyncAPIConsumer):
 
     @message_activity.groups_for_signal
     def message_activity(self, instance: Message, **kwargs):
-        yield f'room__{instance.chat_room_id}'
+        yield f'room__{instance.chat_room.id}'
         yield f'pk__{instance.pk}'
 
     @message_activity.groups_for_consumer
