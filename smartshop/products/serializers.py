@@ -43,7 +43,6 @@ class RatingCreateSerializer(serializers.ModelSerializer):
             product=validated_data.get('product'),
             defaults={'rate': validated_data.get('rate')}
         )
-
         return rating
 
 
